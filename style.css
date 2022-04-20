@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: white;
+    font-family: 'Muli', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+}
+
+.progress-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 100%;
+    margin-bottom: 30px;
+    width: 350px;
+    position: relative;
+}
+
+.progress-container::before {
+    content: '';
+    background-color: lightgray;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    height: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: -1;
+}
+
+.progress {
+    background-color: cornflowerblue;
+    position: absolute;
+    width: 0%;
+    left: 0;
+    height: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: -1;
+    transition: 0.4s ease 0.2s;
+}
+
+.circle {
+    background-color: lightgray;
+    color: whitesmoke;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    /* border-color: cornflowerblue; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid lightgray;
+    transition: 0.4 ease 0.2s;
+}
+
+.circle.active {
+    border-color: cornflowerblue;
+}
+
+.btn {
+    background-color: cornflowerblue;
+    color: whitesmoke;
+    border: 0px;
+    padding: 8px 30px;
+    margin: 5px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.btn:focus {
+    outline: 0;
+}
+
+.btn:disabled {
+    background-color: lightgray;
+    cursor: not-allowed;
+    transform: none;
+}
